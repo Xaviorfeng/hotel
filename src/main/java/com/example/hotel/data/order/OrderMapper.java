@@ -22,7 +22,7 @@ public interface OrderMapper {
 
     List<Order> getUserOrders(@Param("userid") int userid);
 
-    int annulOrder(@Param("orderid") int orderid);
+    int annulOrder(@Param("orderid") int orderid, @Param("cancellationDate") String cancellationDate);
 
     Order getOrderById(@Param("orderid") int orderid);
 

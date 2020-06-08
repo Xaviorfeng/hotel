@@ -11,7 +11,7 @@ public class Hotel {
      * 商圈
      */
     private BizRegion bizRegion;
-    private HotelStar hotelStar;
+    private HotelStar hotelStar;  //星级
     private Double rate;
     private String description;
     private String phoneNum;

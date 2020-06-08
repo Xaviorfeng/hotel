@@ -14,14 +14,16 @@ public class OrderVO {
     private String checkInDate;
     private String checkOutDate;
     private String roomType;
-    private Integer roomNum;
+    private Integer roomNum;        //这个是房间数， 好像是 在线下分配具体的房间号的
     private Integer peopleNum;
     private boolean haveChild;
     private String createDate;
     private Double price;
     private String clientName;
     private String phoneNumber;
-    private String orderState;
+    private String orderState;      //包含状态："已预订"  "已撤销"  "已入住"
+    //personal
+    private String cancellationDate;
 
     public Integer getId() {
         return id;
@@ -140,6 +142,11 @@ public class OrderVO {
     }
 
     public void setOrderState(String orderState) {
-        this.orderState = orderState;
+        this.orderState = orderState;               //包含状态："已预订"  "已撤销"  "已入住"
     }
+
+    //personal
+    public String getCancellationDate(){return cancellationDate; }
+
+    public void setCancellationDate(String cancellationDate){this.cancellationDate=cancellationDate; }
 }

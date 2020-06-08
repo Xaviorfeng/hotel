@@ -2,7 +2,7 @@ package com.example.hotel.po;
 import java.time.LocalDateTime;
 
 
-public class Coupon {
+public class Coupon {                   // 优惠券难道不是 每个人有的优惠券种类不一样吗？？？？？？？？？？？？？？？？？？？好像没实现？
     /**
      * 优惠券id
      */
@@ -15,16 +15,18 @@ public class Coupon {
     /**
      * 如果为-1 代表是网站推出的优惠
      */
-    private Integer hotelId;
+    private Integer hotelId;                                    //用于 考虑发放优惠券的主体包括酒店与网站两个主体
 
     /**
      * 优惠券类型 1生日特惠 2多间特惠 3满减优惠 4限时优惠
      */
     private Integer couponType;
+
     /**
      * 优惠券名称
      */
     private String couponName;
+
     /**
      * 优惠券使用门槛
      */
@@ -33,7 +35,7 @@ public class Coupon {
     /**
      * 折扣
      */
-    private double discount;
+    private double discount;                // 折扣 和 优惠金额 的 区别使用 是怎么实现的 ？？
     /**
      * 优惠券优惠金额
      */
@@ -50,7 +52,10 @@ public class Coupon {
     /**
      * 优惠券状态 是否已经失效 1可用 0失效
      */
-    private Integer status;
+    private Integer status;                                     // 优惠券难道不是 每个人有的优惠券种类不一样吗？？？？？？？？？？？？？？？？？？？
+
+
+
 
     public LocalDateTime getStartTime() {
         return startTime;

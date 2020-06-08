@@ -23,6 +23,9 @@ public class Order {
     private String phoneNumber;
     private String orderState;
 
+    //personal
+    private String cancellationDate;
+
     public Integer getId() {
         return id;
     }
@@ -142,4 +145,9 @@ public class Order {
     public void setOrderState(String orderState) {
         this.orderState = orderState;
     }
+
+    //personal
+    public String getCancellationDate(){return cancellationDate; }
+
+    public void setCancellationDate(String cancellationDate){this.cancellationDate=cancellationDate; }
 }

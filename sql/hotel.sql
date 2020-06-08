@@ -46,7 +46,7 @@ CREATE TABLE `Coupon` (
 --
 BEGIN;
 /*!40000 ALTER TABLE `Coupon` DISABLE KEYS */;
-INSERT INTO `Coupon` VALUES (2,'满500-100优惠',2,3,'满减优惠券',500,0,1,NULL,NULL,100);
+INSERT INTO `Coupon` VALUES (1,'满200-200优惠',-1,3,'满减优惠券',200,0,1,NULL,NULL,200),(2,'满500-100优惠',2,3,'满减优惠券',500,0,1,NULL,NULL,100);
 /*!40000 ALTER TABLE `Coupon` ENABLE KEYS */;
 COMMIT;
 
@@ -100,6 +100,7 @@ CREATE TABLE `OrderList` (
   `peopleNum` int(255) DEFAULT NULL,
   `haveChild` tinytext,
   `createDate` varchar(255) DEFAULT NULL,
+  `cancellationDate` varchar(255) DEFAULT NULL,  -- personal
   `price` decimal(65,0) DEFAULT NULL,
   `clientName` varchar(255) DEFAULT NULL,
   `phoneNumber` varchar(255) DEFAULT NULL,
@@ -171,6 +172,44 @@ BEGIN;
 INSERT INTO `User` VALUES (4,'1012681@qq.com','123456','测试一号','12345678919',100,'Client'),(5,'123@qq.com','123456','测试二号','12345678911',100,'Client'),(6,'333@qq.com','123456',NULL,NULL,NULL,'HotelManager');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 COMMIT;
+
+
+
+
+
+-- personal
+-- Table structure for table `Credit`
+--
+
+DROP TABLE IF EXISTS `Credit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Credit`
+(
+    `id`            int(11) NOT NULL AUTO_INCREMENT,
+    `change_time`   datetime DEFAULT NULL,
+    `user_id`       int(11) NOT NULL,   -- 感觉也可以是 default NULL ？？？？
+    `order_id`      int(11)  DEFAULT NULL,
+    `actionType`    int(11) NOT NULL,
+    `credit_change` double(255,0)  DEFAULT NULL,
+    `credit_result` double(255,0)  DEFAULT NULL, -- 感觉也可以是 NOT NULL ？？？？
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Credit`
+--
+
+BEGIN;
+/*!40000 ALTER TABLE `Credit` DISABLE KEYS */;
+INSERT INTO `Credit` VALUES (4,'2020-06-07 12:52:00',4,NULL,1,0,100);   -- 不知道datetime格式是不是这么写的
+/*!40000 ALTER TABLE `Credit` ENABLE KEYS */;
+COMMIT;
+
+
+
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
